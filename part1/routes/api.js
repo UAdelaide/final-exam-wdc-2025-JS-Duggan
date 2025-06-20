@@ -2,9 +2,9 @@ var express = require('express');
 var router = express.Router();
 var mysql = require('mysql2/promise');
 
-let db
+let db;
 
-(async () => {
+(async function() {
   try {
       const connection = await mysql.createConnection({
         socketPath: '/var/run/mysqld/mysqld.sock'
@@ -74,7 +74,7 @@ let db
       `);
 
       // insert sample data if tables are empty
-      let rows
+      let rows;
       [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
       if (rows[0].count === 0) {
         await db.execute(`
