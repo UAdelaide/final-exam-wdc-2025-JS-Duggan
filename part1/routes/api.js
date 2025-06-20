@@ -9,7 +9,8 @@ router.get('/dogs', async function(req, res, next) {
       socketPath: '/var/run/mysqld/mysqld.sock'
     });
 
-    connection.query('')
+    await connection.query('CREATE DATABASE IF NOT EXISTS testdb');
+    await connection.end();
   } catch (error) {
     res.status(400).send();
   }
