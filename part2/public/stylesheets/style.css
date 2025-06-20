@@ -159,4 +159,6 @@ section {
     max-width: 30vw;
 }
 
-.
+.form-control {
+    padding: 20px;
+}
