@@ -6,6 +6,12 @@ var mysql = require('mysql2/promise');
 router.get('/dogs', async function(req, res, next) {
   try {
     const connection = await mysql.createConnection({
+      shost: 'localhost',
+      user: 'root',
+      p''
+    });
+
+    const connection = await mysql.createConnection({
       host: 'localhost',
       user: 'root',
       password: '' // Set your MySQL root password
