@@ -10,6 +10,8 @@ router.get('/dogs', async function(req, res, next) {
       user: 'root',
       database: 'behind_the_beat'
     });
+
+    
     let results;
     res.status(200).send(results);
   } catch (error) {
