@@ -142,7 +142,7 @@ router.get('/dogs', async function(req, res, next) {
   }
 });
 
-router.get('/walkrequests/open', function(req, res, next) {
+router.get('/walkrequests/open', async function(req, res, next) {
   try {
     const [openRequests] = await db.execute(`
       SELECT
