@@ -1,4 +1,6 @@
-
+const express = require('express');
+const router = express.Router();
+const db = require('../models/db');
 
 router.get('/dogs', async function(req, res, next) {
   try {
@@ -15,3 +17,5 @@ router.get('/dogs', async function(req, res, next) {
     res.status(400).send('Error: ' + error);
   }
 });
+
+export.modules = 
