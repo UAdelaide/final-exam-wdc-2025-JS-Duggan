@@ -128,7 +128,7 @@ let db;
 
 router.get('/dogs', async function(req, res, next) {
   try {
-    const dogs = db.execute(`
+    const [dogs] = await db.execute(`
       SELECT
         name as dog_name,
         size,
