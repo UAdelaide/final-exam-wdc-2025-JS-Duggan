@@ -131,7 +131,7 @@ let db;
             'Great walk, very attentive!'
           ),
           (
-            (SELECT request_id FROM WalkRequests WHERE location = 'Riverbank Park'), -- Luna
+            (SELECT request_id FROM WalkRequests WHERE location = 'Riverbank Park'), -- Milo
             (SELECT user_id FROM Users WHERE username = 'evewalker'),
             (SELECT user_id FROM Users WHERE username = 'alice123'),
             4,
