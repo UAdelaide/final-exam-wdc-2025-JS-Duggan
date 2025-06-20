@@ -124,7 +124,7 @@ router.get('/dogs', async function(req, res, next) {
       SELECT
         name as dog_name,
         size,
-        (select )
+        (SELECT user_name FROM Users WHERE user_id = )
       `)
   } catch {
 
