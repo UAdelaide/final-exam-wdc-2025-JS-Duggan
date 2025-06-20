@@ -21,6 +21,8 @@ router.get('/dogs', async function(req, res, next) {
   }
 });
 
-router.get(/allDogs)
+router.get('/allDogs', async function(req, res) {
+  
+})
 
 module.exports = router;
