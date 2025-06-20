@@ -63,14 +63,14 @@
           try {
             const res = await fetch('/api/allDogs');
             const vals = await res.json();
-            for(let i = 0; i < vals.length; i++) {
-              const res = await fetch('https://dog.ceo/api/breeds/image/random');
-              const data = await res.json();
+            for (let i = 0; i < vals.length; i++) {
+              const response = await fetch('https://dog.ceo/api/breeds/image/random');
+              const data = await response.json();
               vals[i].dogImage = data.message;
             }
             dogs.value = vals;
           } catch (err) {
-            error.value = 'Failed to load walk requests';
+            console.error('Failed to load dogs:', err);
           }
         }
 
