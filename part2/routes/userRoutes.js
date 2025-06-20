@@ -50,6 +50,7 @@ router.post('/login', async (req, res) => {
     }
     // re-route user to dashboard page and save info to session
     if (rows[0].role === 'owner') {
+      req.session.user
       res.redirect('/owner-dashboard.html');
     }
     if (rows[0].role === 'walker') {
