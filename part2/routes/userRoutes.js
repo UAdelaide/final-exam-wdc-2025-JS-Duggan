@@ -38,7 +38,6 @@ router.get('/me', (req, res) => {
 // Post login (modified)
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
-  console.log(req.body);
   try {
     const [rows] = await db.query(`
       SELECT user_id, username, role FROM Users
@@ -51,7 +50,6 @@ router.post('/login', async (req, res) => {
     // re-route user to dashboard page
     if (rows[0].role === 'owner') res.redirect('/owner-dashboard.html');
     if (rows[0].role === 'walker') res.redirect('/walker-dashboard.html');
-    res.json({ message: 'Login successful', user: rows[0] });
   } catch (error) {
     res.status(500).json({ error: 'Login failed' });
   }
