@@ -120,7 +120,7 @@ let db
 
 router.get('/dogs', async function(req, res, next) {
   try {
-    const [dogs] = db.execute()
+    const [dogs] = db.execute('SELECT ')
   } catch {
 
   }
