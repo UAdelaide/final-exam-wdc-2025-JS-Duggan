@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require('../models/db');
 
 router.get('/dogs', async function(req, res, next) {
-  const { owner_id } = req.session.user_id;
+  const owner_id = req.session.user_id;
   try {
     const [dogs] = await db.execute(`
       SELECT
