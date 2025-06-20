@@ -51,10 +51,8 @@
     const { createApp } = Vue;
     createApp({
       setup() {
-        const message = ref('Welcome to the Dog Walking Service!')
-        return {
-          message: 'Welcome to the Dog Walking Service!'
-        };
+        const message = ref('Welcome to the Dog Walking Service!');
+        const dogs = ref([]);
       }
     }).mount('#app');
   </script>
