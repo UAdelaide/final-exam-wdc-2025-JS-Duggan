@@ -60,12 +60,14 @@ router.post('/login', async (req, res) => {
 
 // Add logout functionality
 router.post('/logout', (req, res) => {
-  // clear session, cookies and
+  // clear session
   req.session.destroy((err) => {
     if (err) {
       res.status(500).send(err + 'Failed to logout');
     }
+    // clear session cookie
     res.clearCookie('connect.sid');
+    // redirect user to login page
     res.redirect('/');
   });
 });
