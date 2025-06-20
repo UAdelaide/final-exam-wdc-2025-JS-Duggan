@@ -126,9 +126,9 @@ router.get('/dogs', async function(req, res, next) {
         size,
         (SELECT user_name FROM Users WHERE user_id = owner_id) as owner_username
       `)
-    
+    res.status(200).json(dogs);
   } catch {
-
+    
   }
 });
 
