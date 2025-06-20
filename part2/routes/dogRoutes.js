@@ -7,11 +7,12 @@ router.get('/dogs', async function(req, res, next) {
     const [dogs] = await db.execute(`
       SELECT
         id
-        name as dog_name,
-        size,
+        name,
         (SELECT username FROM Users WHERE user_id = owner_id) as owner_username
       FROM
         Dogs;
+      WHERE
+        owner_id = ?
       `);
     res.status(200).json(dogs);
   } catch (error) {
