@@ -4,7 +4,7 @@ var mysql = require('mysql2/promise');
 
 let db;
 
-(async function() {
+(async () => {
   try {
       const connection = await mysql.createConnection({
         socketPath: '/var/run/mysqld/mysqld.sock'
@@ -115,7 +115,7 @@ let db;
     } catch (error) {
       console.error('Database setup error: ', error);
     }
-});
+})();
 
 
 router.get('/dogs', async function(req, res, next) {
