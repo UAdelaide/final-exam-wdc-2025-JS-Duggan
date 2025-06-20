@@ -33,7 +33,7 @@ var mysql = require('mysql2/promise');
 
 
     } catch (error) {
-      res.status(400).send();
+      console.error('Database setup error: ', error);
     }
 });
 
