@@ -29,26 +29,26 @@
       </div>
       <button type="submit" class="w-100 btn btn-lg btn-primary">Login</button>
     </form>
-  </div>
 
-  <div>
-    <h1>All Registered Dogs</h1>
-    <table>
-      <tr>
-        <th>Dog ID</th>
-        <th>Name</th>
-        <th>Size</th>
-        <th>Owner ID</th>
-        <th>Photo</th>
-      </tr>
-      <tr v-for="dog in dogs">
-        <td>{{ dog.dog_id }}</td>
-        <td>{{ dog.name }}</td>
-        <td>{{ dog.size }}</td>
-        <td>{{ dog.owner_id }}</td>
-        <td><img :src="dog.dogImage" width="100"></td>
-      </tr>
-    </table>
+    <div>
+      <h1>All Registered Dogs</h1>
+      <table>
+        <tr>
+          <th>Dog ID</th>
+          <th>Name</th>
+          <th>Size</th>
+          <th>Owner ID</th>
+          <th>Photo</th>
+        </tr>
+        <tr v-for="dog in dogs">
+          <td>{{ dog.dog_id }}</td>
+          <td>{{ dog.name }}</td>
+          <td>{{ dog.size }}</td>
+          <td>{{ dog.owner_id }}</td>
+          <td><img :src="dog.dogImage" width="100"></td>
+        </tr>
+      </table>
+    </div>
   </div>
 
   <script>
