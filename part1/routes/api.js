@@ -5,10 +5,10 @@ var mysql = require('mysql2/promise');
 
 router.get('/dogs', async function(req, res, next) {
   try {
-    let connection = await mysql.createConnection({
+    const connection = await mysql.createConnection({
       shost: 'localhost',
       user: 'root',
-      database: 'behind_the_beat'
+      database: ''''
     });
 
     const connection = await mysql.createConnection({
