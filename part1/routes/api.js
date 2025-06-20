@@ -32,9 +32,9 @@ var mysql = require('mysql2/promise');
           name VARCHAR(50) NOT NULL,
           size ENUM('small', 'medium', 'large') NOT NULL,
           FOREIGN KEY (owner_id) REFERENCES Users(user_id)
-      );
+        );
 
-      CREATE TABLE WalkRequests (
+        CREATE TABLE WalkRequests (
           request_id INT AUTO_INCREMENT PRIMARY KEY,
           dog_id INT NOT NULL,
           requested_time DATETIME NOT NULL,
@@ -43,9 +43,9 @@ var mysql = require('mysql2/promise');
           status ENUM('open', 'accepted', 'completed', 'cancelled') DEFAULT 'open',
           created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
           FOREIGN KEY (dog_id) REFERENCES Dogs(dog_id)
-      );
+        );
 
-      CREATE TABLE WalkApplications (
+        CREATE TABLE WalkApplications (
           application_id INT AUTO_INCREMENT PRIMARY KEY,
           request_id INT NOT NULL,
           walker_id INT NOT NULL,
@@ -54,9 +54,9 @@ var mysql = require('mysql2/promise');
           FOREIGN KEY (request_id) REFERENCES WalkRequests(request_id),
           FOREIGN KEY (walker_id) REFERENCES Users(user_id),
           CONSTRAINT unique_application UNIQUE (request_id, walker_id)
-      );
+        );
 
-      CREATE TABLE WalkRatings (
+        CREATE TABLE WalkRatings (
           rating_id INT AUTO_INCREMENT PRIMARY KEY,
           request_id INT NOT NULL,
           walker_id INT NOT NULL,
@@ -68,7 +68,7 @@ var mysql = require('mysql2/promise');
           FOREIGN KEY (walker_id) REFERENCES Users(user_id),
           FOREIGN KEY (owner_id) REFERENCES Users(user_id),
           CONSTRAINT unique_rating_per_walk UNIQUE (request_id)
-      );
+        );
       `);
       await connection.execute(`
         INSERT INTO Dogs (name, size, owner_id) VALUES
