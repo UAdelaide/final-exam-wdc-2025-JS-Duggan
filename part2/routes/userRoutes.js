@@ -63,7 +63,9 @@ router.post('/logout', (req, res) => {
   // clear session, cookies and
   // redirect user to login page
   req.session.destroy(err => {
-    if (err)
+    if (err) {
+      res.status(500).send('')
+    }
   })
 });
 
