@@ -81,6 +81,7 @@
           }
         }
 
+        // fetch user_id
         async function getCurrentUser() {
           try {
             const res = await fetch('/api/users/me', { credentials: 'include' });
@@ -93,6 +94,7 @@
 
         onMounted(() => {
           loadWalkRequests();
+          // run on mount
           getCurrentUser();
         });
 
