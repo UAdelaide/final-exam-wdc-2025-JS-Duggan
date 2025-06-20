@@ -176,7 +176,11 @@ router.get('/walkers/summary', async function(req, res, next) {
         Users
         JOIN WalkRatings on Users.user_id = WalkRatings.walker_id
         JOIN WalkRequests on WalkRequests.request_id = WalkRatings.request_id AND WalkRatings.stauts = 'completed'
-    `)
+      WHERE
+        Users.role = 'walker'
+      GROUP BY
+        Users.user_id;
+        `)
     res.status(200).send(results);
   } catch (error) {
     res.status(400).send('Error: ' + error);
