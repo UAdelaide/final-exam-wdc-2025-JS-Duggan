@@ -117,7 +117,7 @@ var mysql = require('mysql2/promise');
 
 
 router.get('/dogs', async function(req, res, next) {
-
+});
 
 router.get('/walkrequests/open', function(req, res, next) {
   try {
