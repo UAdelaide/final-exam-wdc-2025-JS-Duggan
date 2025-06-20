@@ -7,10 +7,10 @@ router.get('/dogs', async function(req, res, next) {
   try {
     const connection = await mysql.createConnection({
       socketPath: '/var/run/mysqld/mysqld.sock',
-      database
+      database: 'DogWalkService'
     });
 
-    await connection.query('CREATE DATABASE IF NOT EXISTS DogWalkService');
+    await connection.query('');
     await connection.end();
 
 
