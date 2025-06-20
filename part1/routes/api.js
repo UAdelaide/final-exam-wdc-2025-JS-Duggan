@@ -168,6 +168,8 @@ router.get('/walkers/summary', async function(req, res, next) {
   try {
     const [walkers] = await db.execute(`
       SELECT
+        Users.username as walker_username,
+        
       FROM
         Users
         JOIN WalkRatings on Users.user_id = WalkRatings.walker_id
