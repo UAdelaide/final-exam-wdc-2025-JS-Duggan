@@ -7,8 +7,8 @@ router.get('/dogs', async function(req, res, next) {
   try {
     const [dogs] = await db.execute(`
       SELECT
-        dog_id
-        name,
+        dog_id,
+        name
       FROM
         Dogs
       WHERE
