@@ -188,7 +188,7 @@ router.get('/walkers/summary', async function(req, res, next) {
       FROM
         Users
         JOIN WalkRatings on Users.user_id = WalkRatings.walker_id
-        JOIN WalkRequests on WalkRequests.request_id = WalkRatings.request_id AND WalkRequests.status = 'completed'
+        JOIN WalkRequests on WalkRequests.request_id = WalkRatings.request_id
       WHERE
         Users.role = 'walker'
       GROUP BY
