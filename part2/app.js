@@ -8,6 +8,8 @@ const app = express();
 
 // Middleware
 app.use(express.json());
+// add cookie parser middleware
+app.use(cookieParser());
 // add urlencoded false so form will correctly interpret
 app.use(express.urlencoded({ extended: false }));
 app.use(session({
