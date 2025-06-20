@@ -60,7 +60,9 @@ router.post('/login', async (req, res) => {
 
 // Add logout functionality
 router.post('/logout', (req, res) => {
-  //clear session
+  // clear session, cookies and
+  // redirect user to login page
+  
 });
 
 module.exports = router;
