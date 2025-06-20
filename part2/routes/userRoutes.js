@@ -30,8 +30,6 @@ router.post('/register', async (req, res) => {
 
 router.get('/me', (req, res) => {
   // change to session.user_id to match current session
-  const user_id = req.session.user_id;
-  console.log(user_id);
   if (!req.session.user_id) {
     return res.status(401).json({ error: 'Not logged in' });
   }
