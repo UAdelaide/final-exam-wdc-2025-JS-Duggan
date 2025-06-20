@@ -85,6 +85,7 @@
           location: ''
         });
 
+        // add dogs value
         const walks = ref([]);
         const dogs = ref([]);
         const message = ref('');
@@ -99,6 +100,7 @@
           }
         }
 
+        // add loadDogs function
         async function loadDogs() {
           try {
             const res = await fetch('/api/dog/dogs');
