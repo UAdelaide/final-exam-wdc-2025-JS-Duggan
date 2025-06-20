@@ -30,14 +30,12 @@ router.get('/allDogs', async function(req, res) {
         size,
         owner_id
       FROM
-        Dogs
-      WHERE
-        owner_id = ?;
-      `, [owner_id]);
+        Dogs;
+    `);
     res.status(200).json(dogs);
   } catch (error) {
     res.status(400).send('Error: ' + error);
   }
-})
+});
 
 module.exports = router;
