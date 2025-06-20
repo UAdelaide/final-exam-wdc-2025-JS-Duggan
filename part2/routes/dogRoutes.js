@@ -9,7 +9,6 @@ router.get('/dogs', async function(req, res, next) {
       SELECT
         dog_id
         name,
-        (SELECT username FROM Users WHERE user_id = owner_id) as owner_username
       FROM
         Dogs
       WHERE
