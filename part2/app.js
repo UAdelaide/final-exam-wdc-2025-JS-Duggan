@@ -12,7 +12,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(session({
   secret: 'secret-key',
-  
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    
+  }
 }));
 app.use(express.static(path.join(__dirname, '/public')));
 
