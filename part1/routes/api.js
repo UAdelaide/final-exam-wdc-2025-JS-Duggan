@@ -136,7 +136,7 @@ router.get('/dogs', async function(req, res, next) {
       FROM
         Dogs;
       `);
-    console.log(dogs);
+    console.log('here');
     res.status(200).json(dogs);
   } catch (error) {
     res.status(400).send(error);
