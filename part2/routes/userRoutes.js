@@ -66,7 +66,8 @@ router.post('/logout', (req, res) => {
     if (err) {
       res.status(500).send(err + 'Failed to logout');
     }
-    res.clearCookie.
+    res.clearCookie('connect.cid');
+    res.redirect('/');
   });
 });
 
