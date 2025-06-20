@@ -26,7 +26,9 @@
           <div class="mb-3">
             <!-- add drop down menu -->
             <label class="form-label">Select Your Dog</label>
-            <select v-model="form.dog_id" class="form-control" 
+            <select v-model="form.dog_id" class="form-control" required>
+              <option value=""
+            </select>
             <input v-model="form.dog_id" type="number" class="form-control" required>
           </div>
           <div class="mb-3">
