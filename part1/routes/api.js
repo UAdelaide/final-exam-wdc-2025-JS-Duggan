@@ -154,7 +154,7 @@ router.get('/walkrequests/open', async function(req, res, next) {
         (SELECT username FROM Users WHERE user_id = owner_id) as owner_username
       FROM
         WalkRequests
-        JOIN Dogs on Dogs.dog_id = WalkRequest.dog_id
+        JOIN Dogs on Dogs.dog_id = WalkRequests.dog_id
       WHERE
         WalkRequests.status = 'open'
     `);
