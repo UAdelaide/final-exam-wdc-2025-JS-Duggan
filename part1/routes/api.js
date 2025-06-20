@@ -169,7 +169,7 @@ router.get('/walkers/summary', function(req, res, next) {
     let results;
     res.status(200).send(results);
   } catch (error) {
-    res.status(400).send();
+    res.status(400).send('Error: ' + error);
   }
 });
 
