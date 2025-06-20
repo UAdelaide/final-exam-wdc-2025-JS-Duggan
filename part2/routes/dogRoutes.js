@@ -3,6 +3,7 @@ const router = express.Router();
 const db = require('../models/db');
 
 router.get('/dogs', async function(req, res, next) {
+  const { owner_id } = req.
   try {
     const [dogs] = await db.execute(`
       SELECT
@@ -13,7 +14,7 @@ router.get('/dogs', async function(req, res, next) {
         Dogs;
       WHERE
         owner_id = ?
-      `);
+      `, [owner_id]);
     res.status(200).json(dogs);
   } catch (error) {
     res.status(400).send('Error: ' + error);
