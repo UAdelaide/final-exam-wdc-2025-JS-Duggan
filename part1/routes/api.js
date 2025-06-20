@@ -167,7 +167,10 @@ router.get('/walkrequests/open', async function(req, res, next) {
 router.get('/walkers/summary', async function(req, res, next) {
   try {
     const [walkers] = await db.execute(`
-      
+      SELECT
+      FROM
+        Users
+        JOIN WalkRequests on 
     `)
     res.status(200).send(results);
   } catch (error) {
