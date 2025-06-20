@@ -2,9 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mysql = require('mysql2/promise');
 
-
-router.get('/dogs', async function(req, res, next) {
-  try {
+try {
     const connection = await mysql.createConnection({
       socketPath: '/var/run/mysqld/mysqld.sock'
     });
@@ -37,6 +35,9 @@ router.get('/dogs', async function(req, res, next) {
     res.status(400).send();
   }
 });
+
+router.get('/dogs', async function(req, res, next) {
+
 
 router.get('/walkrequests/open', function(req, res, next) {
   try {
