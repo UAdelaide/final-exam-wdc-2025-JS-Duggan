@@ -146,11 +146,13 @@ router.get('/walkrequests/open', async function(req, res, next) {
   try {
     const [openRequests] = await db.execute(`
       SELECT
+        
       FROM
         WalkRequests
         JOIN Dogs on Dogs.dog_id = WalkRequest.dog_id
       WHERE
-        WalkRequests.status = `)
+        WalkRequests.status = 'open'
+    `);
   } catch (error) {
     res.status(400).send();
   }
