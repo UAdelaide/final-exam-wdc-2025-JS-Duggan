@@ -147,6 +147,10 @@ router.get('/walkrequests/open', async function(req, res, next) {
     const [openRequests] = await db.execute(`
       SELECT
         request_id,
+        name as dog_name,
+        requested_time,
+        duration_minutes,
+        location,
         
       FROM
         WalkRequests
