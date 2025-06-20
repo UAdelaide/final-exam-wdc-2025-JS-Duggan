@@ -57,7 +57,7 @@ router.post('/login', async (req, res) => {
 
 // Post login (modified)
 router.post('/login', async (req, res) => {
-  const { email, password } = req.body;
+  const { username, password } = req.body;
 
   try {
     const [rows] = await db.query(`
