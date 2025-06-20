@@ -70,6 +70,8 @@ var mysql = require('mysql2/promise');
           CONSTRAINT unique_rating_per_walk UNIQUE (request_id)
         );
       `);
+
+      // insert sample data if tables are empty
       let rows
       [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
       if (rows[0].count === 0) {
