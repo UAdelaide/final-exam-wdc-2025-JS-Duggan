@@ -166,7 +166,7 @@ router.get('/walkrequests/open', async function(req, res, next) {
 
 router.get('/walkers/summary', function(req, res, next) {
   try {
-    let results;
+    const [walkers] = await db.execute()
     res.status(200).send(results);
   } catch (error) {
     res.status(400).send('Error: ' + error);
