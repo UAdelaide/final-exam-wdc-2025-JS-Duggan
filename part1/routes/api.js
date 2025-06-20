@@ -15,7 +15,7 @@ var mysql = require('mysql2/promise');
         socketPath: '/var/run/mysqld/mysqld.sock',
         database: 'DogWalkService'
       });
-
+      // create tables
       await db.execute(`
         CREATE TABLE IF NOT EXISTS Users (
           user_id INT AUTO_INCREMENT PRIMARY KEY,
