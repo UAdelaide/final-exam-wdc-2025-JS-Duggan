@@ -58,7 +58,10 @@
         async function loadDogs() {
           try {
             const res = await fetch('/api/allDogs');
-            cont vals = await res.
+            const vals = await res.json();
+            for(val : vals) {
+              
+            }
           } catch (err) {
             error.value = 'Failed to load walk requests';
           }
