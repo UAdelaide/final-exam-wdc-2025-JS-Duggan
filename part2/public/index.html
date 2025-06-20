@@ -42,7 +42,7 @@
         <th>Photo</th>
       </tr>
       <tr v-for="dog in dogs">
-
+        <td>{{dog.name</td>
       </tr>
     </table>
   </div>
@@ -64,7 +64,7 @@
               const data = await res.json();
               vals.dogImage = data.message;
             }
-            dogs 
+            dogs.value = vals;
           } catch (err) {
             error.value = 'Failed to load walk requests';
           }
