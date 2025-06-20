@@ -3,7 +3,8 @@ const path = require('path');
 require('dotenv').config();
 
 const app = express();
-
+    const session = require('express-session');
+    const cookieParser = require('cookie-parser');
 // Middleware
 app.use(express.json());
 // add urlencoded false so form will correctly interpret
