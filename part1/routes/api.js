@@ -139,7 +139,7 @@ router.get('/dogs', async function(req, res, next) {
     console.log('here');
     res.status(200).json(dogs);
   } catch (error) {
-    res.status(400).send('Error:'"error);
+    res.status(400).send('Error:' + error);
   }
 });
 
