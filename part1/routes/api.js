@@ -71,12 +71,15 @@ var mysql = require('mysql2/promise');
         );
       `);
 
-      const count 
-      await connection.execute(`
-        INSERT INTO Dogs (name, size, owner_id) VALUES
-        ('Jack', 'large', (SELECT user_id FROM Users WHERE username = 'alice123')),
-      `);
-      await connection.end();
+      const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
+      if (rows[0].count === 0) {
+        await db.execute(`
+          INSERT INTO books (title, author) VALUES
+          ('1984', 'George Orwell'),
+          ('To Kill a Mockingbird', 'Harper Lee'),
+          ('Brave New World', 'Aldous Huxley')
+        `);
+      }
 
 
     } catch (error) {
