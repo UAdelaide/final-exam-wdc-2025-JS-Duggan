@@ -35,7 +35,7 @@
     <div class="table-responsive">
       <table class="table table-striped align-middle text-center">
         <thead class="table-light">
-          <!-- table  -->
+          <!-- Column Titles -->
           <tr>
             <th>Dog ID</th>
             <th>Name</th>
@@ -45,6 +45,7 @@
           </tr>
         </thead>
         <tbody>
+          <!-- Colums values, filled using v-for loop -->
           <tr v-for="dog in dogs">
             <td>{{ dog.dog_id }}</td>
             <td>{{ dog.name }}</td>
