@@ -70,8 +70,8 @@ var mysql = require('mysql2/promise');
           CONSTRAINT unique_rating_per_walk UNIQUE (request_id)
         );
       `);
-
-      const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
+      let rows
+      [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
       if (rows[0].count === 0) {
         await db.execute(`
           INSERT INTO Users (username, email, password_hash, role) VALUES
@@ -83,7 +83,7 @@ var mysql = require('mysql2/promise');
         `);
       }
 
-      const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
+      [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
       if (rows[0].count === 0) {
         await db.execute(`
           INSERT INTO Users (username, email, password_hash, role) VALUES
