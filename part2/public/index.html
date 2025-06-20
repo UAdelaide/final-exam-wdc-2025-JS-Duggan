@@ -61,6 +61,7 @@
 
         async function loadDogs() {
           try {
+            console.log('running');
             const res = await fetch('/api/allDogs');
             const vals = await res.json();
             for (let i = 0; i < vals.length; i++) {
@@ -68,6 +69,7 @@
               const data = await response.json();
               vals[i].dogImage = data.message;
             }
+            console.log(vals);
             dogs.value = vals;
           } catch (err) {
             console.error('Failed to load dogs:', err);
