@@ -12,16 +12,12 @@
     <div class="dog-card" role="banner">
       <h1>The cutest thing you will see today!</h1>
       <img :src="dogImage" alt="" width="300">
-      <p>{{ dogDescription }}</p>
-      <button @click="fetchDog">Click here to get another dog pic!</button>
     </div>
   </div>
     <script>
         createApp({
             data() {
                 return {
-                    dogName: "Barky McBarkface",
-                    dogDescription: "The fluffiest dog you'll see today!",
                     dogImage: ""
                 }
             },
