@@ -173,6 +173,7 @@ router.get('/walkers/summary', async function(req, res, next) {
       FROM
         Users
         JOIN WalkRatings on Users.user_id = WalkRatings.walker_id
+        JOIN 
     `)
     res.status(200).send(results);
   } catch (error) {
