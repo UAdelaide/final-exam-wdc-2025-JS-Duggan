@@ -136,7 +136,8 @@ let db;
             (SELECT user_id FROM Users WHERE username = 'alice123'),
             4,
             'Good experience, but arrived slightly late.'
-);        `);
+          );
+        `);
       }
 
     } catch (error) {
