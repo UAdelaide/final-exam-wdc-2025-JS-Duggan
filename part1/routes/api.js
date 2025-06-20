@@ -124,13 +124,6 @@ let db;
         await db.execute(`
           INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALUES
           (
-            (SELECT request_id FROM WalkRequests WHERE location = 'Downtown Green'),  -- Milo
-            (SELECT user_id FROM Users WHERE username = 'bobwalker'),
-            (SELECT user_id FROM Users WHERE username = 'carol123'),
-            5,
-            'Great walk, very attentive!'
-          ),
-          (
             (SELECT request_id FROM WalkRequests WHERE location = 'Riverbank Park'), -- Luna
             (SELECT user_id FROM Users WHERE username = 'evewalker'),
             (SELECT user_id FROM Users WHERE username = 'alice123'),
