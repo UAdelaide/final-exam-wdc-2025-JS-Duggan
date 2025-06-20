@@ -201,7 +201,7 @@ router.get('/walkers/summary', async function(req, res, next) {
       GROUP BY
         Users.user_id;
     `);
-    res.status(200).send(results);
+    res.status(200).send(walkers);
   } catch (error) {
     res.status(400).send('Error: ' + error);
   }
