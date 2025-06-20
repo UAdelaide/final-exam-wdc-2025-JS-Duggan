@@ -104,7 +104,7 @@
             const res = await fetch('/api/dog/dogs');
             dogs.value = await res.json();
           } catch (err) {
-            error.value = 'Failed to load user's dogs'
+            error.value = 'Failed to load user\'s dogs'
           }
         }
 
