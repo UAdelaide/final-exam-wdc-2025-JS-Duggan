@@ -48,7 +48,7 @@
         const walks = ref([]);
         const message = ref('');
         const error = ref('');
-        const user = -1;
+        const user = ;
 
         async function loadWalkRequests() {
           try {
@@ -83,7 +83,7 @@
           try {
             const res = await fetch('/api/users/me');
             if (!res.ok) throw new Error('Failed to load user_id');
-            user = await res.json();
+            return await res.json();
           } catch (err) {
             error.value = err.message;
           }
