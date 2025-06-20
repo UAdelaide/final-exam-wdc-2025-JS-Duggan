@@ -12,6 +12,7 @@ app.use(express.json());
 app.use(cookieParser());
 // add urlencoded false so form will correctly interpret
 app.use(express.urlencoded({ extended: false }));
+// add session middleware
 app.use(session({
   secret: 'secret-key',
   resave: false,
