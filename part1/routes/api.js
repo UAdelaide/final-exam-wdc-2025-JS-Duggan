@@ -3,7 +3,8 @@ var router = express.Router();
 
 router.get('/dogs', function(req, res, next) {
   try {
-
+    let results;
+    res.status(200).send(results);
   } catch (error) {
     res.status(400).send();
   }
@@ -11,7 +12,8 @@ router.get('/dogs', function(req, res, next) {
 
 router.get('/walkrequests/open', function(req, res, next) {
   try {
-    res.status(200).send()
+    let results;
+    res.status(200).send(results);
   } catch (error) {
     res.status(400).send();
   }
@@ -19,7 +21,8 @@ router.get('/walkrequests/open', function(req, res, next) {
 
 router.get('/walkers/summary', function(req, res, next) {
   try {
-
+    let results;
+    res.status(200).send(results);
   } catch (error) {
     res.status(400).send();
   }
