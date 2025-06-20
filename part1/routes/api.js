@@ -169,7 +169,7 @@ router.get('/walkers/summary', async function(req, res, next) {
     const [walkers] = await db.execute(`
       SELECT
         username as walker_username,
-        count
+        count(*)
       FROM
         Users
         JOIN WalkRatings on Users.user_id = WalkRatings.walker_id
