@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models/db');
 
-// return 
+// return dog_id and name for walk requests
 router.get('/dogs', async function(req, res, next) {
   const owner_id = req.session.user_id;
   try {
