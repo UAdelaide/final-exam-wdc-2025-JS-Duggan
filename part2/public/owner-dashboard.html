@@ -138,16 +138,18 @@
 
         onMounted(() => {
           loadWalks();
+          // load dogs on mount
           loadDogs();
         });
 
         return {
           form,
           walks,
+          // return dogs value
           dogs,
           message,
           error,
-          submitWalkRequest
+          submitWalkRequest 
         };
       }
     }).mount('#app');
