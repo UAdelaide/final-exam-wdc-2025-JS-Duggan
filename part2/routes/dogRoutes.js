@@ -11,9 +11,9 @@ router.get('/dogs', async function(req, res, next) {
         name,
         (SELECT username FROM Users WHERE user_id = owner_id) as owner_username
       FROM
-        Dogs;
+        Dogs
       WHERE
-        owner_id = ?
+        owner_id = ?;
       `, [owner_id]);
     res.status(200).json(dogs);
   } catch (error) {
