@@ -5,6 +5,7 @@ const db = require('../models/db');
 // return dog_id and name for walk requests
 router.get('/dogs', async function(req, res, next) {
   const owner_id = req.session.user_id;
+  console.log(owner_id);
   try {
     const [dogs] = await db.execute(`
       SELECT
