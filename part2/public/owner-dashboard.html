@@ -27,7 +27,7 @@
             <!-- add drop down menu -->
             <label class="form-label">Select Your Dog</label>
             <select v-model="form.dog_id" class="form-control" required>
-              <option v-for="dog in dogs" value="dog_id"
+              <option v-for="dog in dogs" value="dog.dog_id">{{dog.name}}</option>
             </select>
             <input v-model="form.dog_id" type="number" class="form-control" required>
           </div>
