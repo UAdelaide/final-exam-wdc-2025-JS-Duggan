@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json());
 // add urlencoded false so form will correctly interpret
 app.use(express.urlencoded({ extended: false }));
-app.use()
+app.use(session)
 app.use(express.static(path.join(__dirname, '/public')));
 
 // Routes
