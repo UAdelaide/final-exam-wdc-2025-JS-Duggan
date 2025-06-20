@@ -26,7 +26,7 @@
       <p> you will see today!</p>
       <img :src="dogImage" alt="" width="300">
     </div>
-    <button>🐕</button>
+    <button @click="fetchDog()">🐕</button>
   </div>
     <script>
         const { createApp } = Vue;
