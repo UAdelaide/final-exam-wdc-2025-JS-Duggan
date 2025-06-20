@@ -148,7 +148,7 @@ router.get('/walkrequests/open', async function(req, res, next) {
       SELECT
       FROM
         WalkRequests
-        JOIN Dogs on Dogs.`)
+        JOIN Dogs on Dogs.dog_id = `)
   } catch (error) {
     res.status(400).send();
   }
