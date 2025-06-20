@@ -1,4 +1,5 @@
 const express = require('express');
+// Add imports for required libraries
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const path = require('path');
