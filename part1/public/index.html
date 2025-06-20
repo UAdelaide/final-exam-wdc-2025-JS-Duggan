@@ -8,9 +8,14 @@
 </head>
 
 <body>
-    <h1>Express</h1>
-    <p>Welcome to Express</p>
-    const { createApp } = Vue;
+    <div id="app">
+    <div class="dog-card" role="banner">
+      <h1>🐶 Meet {{ dogName }}!</h1>
+      <img :src="dogImage" alt="" width="300">
+      <p>{{ dogDescription }}</p>
+      <button @click="fetchDog">Click here to get another dog pic!</button>
+    </div>
+  </div>
     <script>
         createApp({
             data() {
