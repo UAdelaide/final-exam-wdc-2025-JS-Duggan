@@ -59,13 +59,16 @@
   </div>
 
   <script>
+    //import ref and onMounted
     const { createApp, ref, onMounted } = Vue;
 
+    //change to use setup instead of data
     createApp({
       setup() {
         const message = ref('Welcome to the Dog Walking Service!');
         const dogs = ref([]);
 
+        //
         async function loadDogs() {
           try {
             console.log('running');
