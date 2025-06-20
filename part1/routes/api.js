@@ -5,9 +5,10 @@ var mysql = require('mysql2/promise');
 
 router.get('/dogs', async function(req, res, next) {
   try {
-    connection = await mysql.createConnection({
-    socketPath: '/var/run/mysqld/mysqld.sock',
-    database: 'behind_the_beat'
+    let connection = await mysql.createConnection({
+      shost: 'localhost',
+      user: 'root',
+      database: 'behind_the_beat'
     });
     let results;
     res.status(200).send(results);
