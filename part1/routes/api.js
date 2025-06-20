@@ -122,7 +122,9 @@ router.get('/dogs', async function(req, res, next) {
   try {
     const [dogs] = db.execute(`
       SELECT
-        name as do
+        name as dog_name,
+        size,
+        (select )
       `)
   } catch {
 
