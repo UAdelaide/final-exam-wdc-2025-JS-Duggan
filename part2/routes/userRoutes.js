@@ -62,11 +62,12 @@ router.post('/login', async (req, res) => {
 router.post('/logout', (req, res) => {
   // clear session, cookies and
   // redirect user to login page
-  req.session.destroy(err => {
+  req.session.destroy((err) => {
     if (err) {
-      res.status(500).send('')
+      res.status(500).send(err + 'Failed to logout');
     }
-  })
+    res.clearCookie.
+  });
 });
 
 module.exports = router;
