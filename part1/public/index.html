@@ -8,5 +8,28 @@
 <body>
     <h1>Express</h1>
     <p>Welcome to Express</p>
+        const { createApp } = Vue;
+
+    createApp({
+      data() {
+        return {
+          dogName: "Barky McBarkface",
+          dogDescription: "The fluffiest dog you'll see today!",
+          dogImage: ""
+        }
+      },
+      methods: {
+        async fetchDog() {
+          const res = await fetch('https://dog.ceo/api/breeds/image/random');
+          const data = await res.json();
+          this.dogImage = data.message;
+        }
+      },
+      mounted() {
+        this.fetchDog();
+      }
+    }).mount('#app');
+  </script>
+
 </body>
 </html>
