@@ -170,7 +170,7 @@ router.get('/walkers/summary', async function(req, res, next) {
       SELECT
       FROM
         Users
-        JOIN WalkRequests on 
+        JOIN WalkRequests on Users.user_id = WalkReviews.
     `)
     res.status(200).send(results);
   } catch (error) {
