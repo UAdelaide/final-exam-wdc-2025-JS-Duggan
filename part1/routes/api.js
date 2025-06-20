@@ -144,8 +144,9 @@ router.get('/dogs', async function(req, res, next) {
 
 router.get('/walkrequests/open', function(req, res, next) {
   try {
-    let results;
-    res.status(200).send(results);
+    const [openRequests] = await db.execute(`
+      SELECT
+        `)
   } catch (error) {
     res.status(400).send();
   }
