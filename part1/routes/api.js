@@ -7,7 +7,9 @@ let db;
 (async () => {
   try {
       const connection = await mysql.createConnection({
-        socketPath: '/var/run/mysqld/mysqld.sock'
+        host: 'localhost',
+      user: 'root',
+      password: ''
       });
 
       await connection.query('CREATE DATABASE IF NOT EXISTS DogWalkService');
