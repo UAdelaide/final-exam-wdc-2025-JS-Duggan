@@ -2,6 +2,9 @@ var express = require('express');
 var router = express.Router();
 var mysql = require('mysql2/promise');
 
+(async () => {
+
+})
 try {
     const connection = await mysql.createConnection({
       socketPath: '/var/run/mysqld/mysqld.sock'
