@@ -1,14 +1,16 @@
 const express = require('express');
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
 const path = require('path');
 require('dotenv').config();
 
 const app = express();
-    const session = require('express-session');
-    const cookieParser = require('cookie-parser');
+
 // Middleware
 app.use(express.json());
 // add urlencoded false so form will correctly interpret
 app.use(express.urlencoded({ extended: false }));
+app.use()
 app.use(express.static(path.join(__dirname, '/public')));
 
 // Routes
