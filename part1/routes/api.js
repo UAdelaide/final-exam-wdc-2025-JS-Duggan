@@ -11,10 +11,13 @@ router.get('/dogs', async function(req, res, next) {
 
     await connection.query('CREATE DATABASE IF NOT EXISTS DogWalkService');
     await connection.end();
+
     const db = await mysql.createConnection({
       socketPath: '/var/run/mysqld/mysqld.sock',
       database: 'DogWalkService'
     });
+
+    await db.execute()
     await connection.execute(`
       INSERT INTO Dogs (name, size, owner_id) VALUES
       ('Jack', 'large', (SELECT user_id FROM Users WHERE username = 'alice123')),
