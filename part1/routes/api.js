@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var mysql = require('mysql2/promise');
 
+let db
+
 (async () => {
   try {
       const connection = await mysql.createConnection({
@@ -11,7 +13,7 @@ var mysql = require('mysql2/promise');
       await connection.query('CREATE DATABASE IF NOT EXISTS DogWalkService');
       await connection.end();
 
-      const db = await mysql.createConnection({
+      db = await mysql.createConnection({
         socketPath: '/var/run/mysqld/mysqld.sock',
         database: 'DogWalkService'
       });
@@ -118,7 +120,7 @@ var mysql = require('mysql2/promise');
 
 router.get('/dogs', async function(req, res, next) {
   try {
-    const [dogs] = db.
+    const [dogs] = db.execute()
   } catch {
 
   }
