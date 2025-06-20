@@ -70,6 +70,8 @@ var mysql = require('mysql2/promise');
           CONSTRAINT unique_rating_per_walk UNIQUE (request_id)
         );
       `);
+
+      const count 
       await connection.execute(`
         INSERT INTO Dogs (name, size, owner_id) VALUES
         ('Jack', 'large', (SELECT user_id FROM Users WHERE username = 'alice123')),
