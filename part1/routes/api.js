@@ -122,13 +122,21 @@ let db;
       [rows] = await db.execute('SELECT COUNT(*) AS count FROM WalkRatings');
       if (rows[0].count === 0) {
         await db.execute(`
-          INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES
-          ((SELECT owner_id FROM Dogs WHERE name = 'Max'), '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
-          ((SELECT owner_id FROM Dogs WHERE name = 'Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
-          ((SELECT owner_id FROM Dogs WHERE name = 'Rocky'), '2025-06-11 10:00:00', 60, 'Hilltop Trail', 'open'),
-          ((SELECT owner_id FROM Dogs WHERE name = 'Luna'), '2025-06-11 11:15:00', 30, 'Riverbank Park', 'completed'),
-          ((SELECT owner_id FROM Dogs WHERE name = 'Milo'), '2025-06-12 14:00:00', 45, 'Downtown Green', 'cancelled');
-        `);
+          INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALUES
+          (
+            (SELECT request_id FROM WalkRequests WHERE location = 'Beachside Ave'),  -- Bella
+            (SELECT user_id FROM Users WHERE username = 'bobwalker'),
+            (SELECT user_id FROM Users WHERE username = 'carol123'),
+            5,
+            'Great walk, very attentive!'
+          ),
+          (
+            (SELECT request_id FROM WalkRequests WHERE location = 'Riverbank Park'), -- Luna
+            (SELECT user_id FROM Users WHERE username = 'evewalker'),
+            (SELECT user_id FROM Users WHERE username = 'alice123'),
+            4,
+            'Good experience, but arrived slightly late.'
+);        `);
       }
 
     } catch (error) {
