@@ -49,15 +49,10 @@ router.post('/login', async (req, res) => {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
     // re-route user to dashboard page and save info to session
-    if (rows[0].role === 'owner') {
-      req.session.user_id = rows[0].user_id;
-      req.session.username = rows[0].username;
-      req.session.role = rows[0].role;
-      res.redirect('/owner-dashboard.html');
-    }
-    if (rows[0].role === 'walker') {
-      res.redirect('/walker-dashboard.html');
-    }
+    req.session.user_id = rows[0].user_id;
+    req.session.username = rows[0].username;
+    req.session.role = rows[0].role;
+    res.redirect(`/{$}-dashboard.html`);
   } catch (error) {
     res.status(500).json({ error: 'Login failed' });
   }
