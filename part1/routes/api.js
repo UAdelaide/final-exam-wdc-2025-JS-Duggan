@@ -107,7 +107,7 @@ let db;
         `);
       }
 
-      [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
+      [rows] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
       if (rows[0].count === 0) {
         await db.execute(`
           INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES
@@ -119,6 +119,7 @@ let db;
         `);
       }
 
+      
 
     } catch (error) {
       console.error('Database setup error: ', error);
