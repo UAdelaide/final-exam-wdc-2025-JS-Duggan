@@ -146,6 +146,8 @@ router.get('/walkrequests/open', async function(req, res, next) {
   try {
     const [openRequests] = await db.execute(`
       SELECT
+      FROM
+        WalkRequests
         `)
   } catch (error) {
     res.status(400).send();
