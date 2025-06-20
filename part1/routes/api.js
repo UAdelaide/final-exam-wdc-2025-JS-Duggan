@@ -128,7 +128,7 @@ router.get('/dogs', async function(req, res, next) {
       `)
     res.status(200).json(dogs);
   } catch {
-    
+    res.status(400).send();
   }
 });
 
