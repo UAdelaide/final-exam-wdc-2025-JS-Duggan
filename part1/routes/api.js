@@ -10,7 +10,7 @@ router.get('/dogs', async function(req, res, next) {
       database: 'DogWalkService'
     });
 
-    await connection.query('');
+    await connection.execute();
     await connection.end();
 
 
