@@ -52,7 +52,7 @@ router.post('/login', async (req, res) => {
     req.session.user_id = rows[0].user_id;
     req.session.username = rows[0].username;
     req.session.role = rows[0].role;
-    res.redirect(`/{$}-dashboard.html`);
+    res.redirect(`/${rows[0].role}-dashboard.html`);
   } catch (error) {
     res.status(500).json({ error: 'Login failed' });
   }
