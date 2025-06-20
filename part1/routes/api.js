@@ -11,7 +11,9 @@ router.get('/dogs', async function(req, res, next) {
     });
 
     await connection.execute(`
-      INSERT INTO Dogs
+      INSERT INTO Dogs (name, size, owner_id) VALUES
+
+
     `);
     await connection.end();
 
