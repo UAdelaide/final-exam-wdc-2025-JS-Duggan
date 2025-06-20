@@ -29,7 +29,7 @@ router.post('/register', async (req, res) => {
 });
 
 router.get('/me', (req, res) => {
-  // change to 
+  // change to session.user_id to match current session
   if (!req.session.user_id) {
     return res.status(401).json({ error: 'Not logged in' });
   }
