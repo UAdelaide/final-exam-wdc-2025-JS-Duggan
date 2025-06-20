@@ -158,10 +158,9 @@ router.get('/walkrequests/open', async function(req, res, next) {
       WHERE
         WalkRequests.status = 'open'
     `);
-    c
     res.status(200).json(openRequests);
   } catch (error) {
-    res.status(400).send();
+    res.status(400).send('Error: ' + error);
   }
 });
 
