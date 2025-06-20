@@ -6,6 +6,7 @@ router.get('/dogs', async function(req, res, next) {
   try {
     const [dogs] = await db.execute(`
       SELECT
+        id
         name as dog_name,
         size,
         (SELECT username FROM Users WHERE user_id = owner_id) as owner_username
@@ -18,4 +19,4 @@ router.get('/dogs', async function(req, res, next) {
   }
 });
 
-export.modules = 
+module.exports = router;
