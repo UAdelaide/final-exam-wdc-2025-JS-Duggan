@@ -10,7 +10,8 @@ router.get('/dogs', async function(req, res, next) {
       database: 'DogWalkService'
     });
 
-    await connection.query('create')
+    await connection.query('CREATE DATABASE IF NOT EXISTS DogWalkService');
+    
     await connection.execute(`
       INSERT INTO Dogs (name, size, owner_id) VALUES
       ('Jack', 'large', (SELECT user_id FROM Users WHERE username = 'alice123')),
