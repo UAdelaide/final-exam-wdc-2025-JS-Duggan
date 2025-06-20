@@ -22,7 +22,22 @@ router.get('/dogs', async function(req, res, next) {
 });
 
 router.get('/allDogs', async function(req, res) {
-  
+  try {
+    const [dogs] = await db.execute(`
+      SELECT
+        dog_id,
+        name,
+        size,
+        owner_id
+      FROM
+        Dogs
+      WHERE
+        owner_id = ?;
+      `, [owner_id]);
+    res.status(200).json(dogs);
+  } catch (error) {
+    res.status(400).send('Error: ' + error);
+  }
 })
 
 module.exports = router;
